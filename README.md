@@ -1,4 +1,5 @@
 # LLM Eng
+Notes and implementations based on learnings in [Udemy LLM Course](https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models).
 
 ## Anaconda route:
 Install Anaconda via [Conda Docs](https://www.anaconda.com/docs/getting-started/anaconda/install#macos-2).
@@ -32,10 +33,33 @@ Run after:
     ```
 - Run `xattr -d com.apple.quarantine drivers/chromedriver-mac-x64/chromedriver` for Mac/Apple to authorize chromedriver.
 
+## Ollama
+- Visit [ollama.com](ollama.com) and install! Follow http://localhost:11434/ to find a message `"Ollama is running"`.
+- Otherwise, run `ollama serve`.
+- In another Terminal, run `ollama pull llama3.2`.
+- Then revisit http://localhost:11434/.
+- If Ollama is slow on your machine, try `MODEL = "llama3.2:1b"`.
+- To make sure the model is loaded, run `!ollama pull llama3.2`.
+
+
 ## Notes:
 - Summarization is one of the most common AI use-cases.
 - OpenAI is a frontier model
 - The thre dimensions of LLM Engineering are Models, Tools and Techniques.
-    - Models (open source, closed multi-modal, Architecture, Selecting).
+    - Models
+        - open source e.g. Llama, Mixtral, Qwen, Gemma, Phi
+        - closed e.g. GPT, Claude, Gemini, Command R, Perplexity paid modals
+        - multi-modal
+        - Architecture
+        - Selecting
     - Tools (HuggingFace, LangChain, Gradio, Weights, biases, Modal).
     - Techniques (APIs, Multip-shot prompting, RAG, Fine-tunig, Agentization).
+- Three ways to use models:
+    - Chat interface e.g. Chat GPT
+    - Cloud APIs e.g.
+        - LLM API like OpenAI
+        - Framework like LangChain (which ustilize multiple AIs under the hood)
+        - Managed AI cloud services e.g. Amazn Bedrock, Google Vertex, Azure ML
+    - Direct Interface e.g.
+        - HuggingFace Transformers Library
+        - Ollama running locally e.g. for confidential data that must not go to some cloud server
