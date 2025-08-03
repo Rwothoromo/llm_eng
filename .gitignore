@@ -1,0 +1,6 @@
+drivers/
+llms/
+.ipynb_checkpoints/
+.virtual_documents/
+.env
+.DS_Store
