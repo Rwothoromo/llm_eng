@@ -42,29 +42,80 @@ Run after:
 - To make sure the model is loaded, run `!ollama pull llama3.2`.
 
 
-## Notes:
-- Summarization is one of the most common AI use-cases.
-- OpenAI is a frontier model
-- Perplexity is a search engine powered by AI.
-- The thre dimensions of LLM Engineering are Models, Tools and Techniques.
-    - Models
-        - open source e.g. Llama, Mixtral, Qwen, Gemma, Phi
-        - closed e.g. GPT, Claude, Gemini, Command R+, Perplexity paid modals
-        - multi-modal
-        - Architecture
-        - Selecting
-    - Tools (HuggingFace, LangChain, Gradio, Weights, biases, Modal).
-    - Techniques (APIs, Multip-shot prompting, RAG, Fine-tunig, Agentization).
-- Three ways to use models:
-    - Chat interface e.g. Chat GPT
-    - Cloud APIs e.g.
-        - LLM API like OpenAI
-        - Framework like LangChain (which ustilize multiple AIs under the hood)
-        - Managed AI cloud services e.g. Amazn Bedrock, Google Vertex, Azure ML
-    - Direct Interface e.g.
-        - HuggingFace Transformers Library
-        - Ollama running locally e.g. for confidential data that must not go to some cloud server
-- Limitations of Frontier Models:
-    - They are not great at specialized domains e.g. most are not at PhD level but are getting very close.
-    - They're not great at recent events because of the date limit on the data they're trained on.
-    - They confidently make mistakes i.e. giving wrong answers with blindspots.
+## Notes - Understanding LLMs and Their Applications:
+A breakdown of key concepts and developments in the world of Large Language Models (LLMs):
+
+### Core AI Use Cases
+
+* **Summarization** is one of the most common and practical applications of AI.
+* **Perplexity** is an AI-powered search engine, demonstrating how AI is enhancing information retrieval.
+* **OpenAI** stands out as a developer of frontier models, pushing the boundaries of AI capabilities.
+
+---
+
+### The Three Dimensions of LLM Engineering
+
+Effective LLM development and deployment revolve around three main pillars:
+
+1.  **Models:**
+    * **Open Source:** Accessible and customizable models like **Llama, Mixtral, Qwen, Gemma,** and **Phi**.
+    * **Closed Source:** Proprietary models such as **GPT, Claude, Gemini, Command R+,** and paid versions of **Perplexity**.
+    * **Multi-modal:** Models capable of processing and generating various types of data (e.g., text, images).
+    * **Architecture:** The underlying design of the model (e.g., Transformer).
+    * **Selection:** Choosing the right model for a specific task based on its strengths and limitations.
+
+2.  **Tools:**
+    * **Hugging Face:** A hub for pre-trained models and datasets.
+    * **LangChain:** A framework for developing applications powered by language models.
+    * **Gradio:** For building interactive web demos of machine learning models.
+    * **Weights & Biases:** For tracking and visualizing machine learning experiments.
+    * **Modal:** For deploying AI models at scale.
+
+3.  **Techniques:**
+    * **APIs (Application Programming Interfaces):** For programmatic access to models.
+    * **Multi-shot Prompting:** Providing multiple examples in a prompt to guide the model's response.
+    * **RAG (Retrieval-Augmented Generation):** Combining information retrieval with text generation to improve accuracy and relevance.
+    * **Fine-tuning:** Adapting a pre-trained model to a specific task or dataset.
+    * **Agentization:** Giving LLMs the ability to plan and execute multi-step tasks.
+
+---
+
+### Ways to Interact with LLMs
+
+There are three primary methods for utilizing LLMs:
+
+1.  **Chat Interfaces:**
+    * Direct conversational interaction, exemplified by **ChatGPT**.
+
+2.  **Cloud APIs:**
+    * **LLM APIs:** Direct access to models, such as **OpenAI's API**.
+    * **Frameworks:** Libraries like **LangChain** that orchestrate multiple AI services.
+    * **Managed AI Cloud Services:** Platforms like **Amazon Bedrock, Google Vertex AI,** and **Azure ML** offering integrated LLM solutions.
+
+3.  **Direct Interfaces:**
+    * **Hugging Face Transformers Library:** For local development and fine-tuning.
+    * **Ollama:** Running models locally, ideal for sensitive or confidential data that shouldn't leave your environment.
+
+---
+
+### Limitations of Frontier Models
+
+Despite their advancements, current frontier models have some limitations:
+
+* **Specialized Domains:** They may not perform at a PhD level in highly niche fields, though they are rapidly improving.
+* **Knowledge Cut-off:** Their training data has a specific date limit, meaning they lack knowledge of very recent events.
+* **Confident Mistakes (Hallucinations):** They can sometimes generate incorrect information with high confidence due to inherent blind spots.
+
+---
+
+### Key Milestones and Trends
+
+The LLM landscape is evolving rapidly:
+
+* **2017:** Google scientists introduced the groundbreaking **Transformer Architecture**, a foundational element for many modern LLMs.
+* **Evolution of Roles:** The "Prompt Engineer" role has seen a significant shift; prompting is now more intuitive and accessible. The pay and hiring hype dipped.
+* **Customization and Ecosystems:** The emergence of **Custom GPTs** and the **GPT Store** allows for personalized AI applications.
+* **Integrated AI Assistants:** The rise of **CoPilots** like **Microsoft Copilot** and **GitHub Copilot**, which integrate AI directly into workflows.
+* **Advanced Agentization:** Further development in AI agents, such as **GitHub Copilot Workspace**, where LLMs can be assigned complex tasks and even take on planning roles.
+
+---
