@@ -45,10 +45,11 @@ Run after:
 ## Notes:
 - Summarization is one of the most common AI use-cases.
 - OpenAI is a frontier model
+- Perplexity is a search engine powered by AI.
 - The thre dimensions of LLM Engineering are Models, Tools and Techniques.
     - Models
         - open source e.g. Llama, Mixtral, Qwen, Gemma, Phi
-        - closed e.g. GPT, Claude, Gemini, Command R, Perplexity paid modals
+        - closed e.g. GPT, Claude, Gemini, Command R+, Perplexity paid modals
         - multi-modal
         - Architecture
         - Selecting
@@ -63,3 +64,7 @@ Run after:
     - Direct Interface e.g.
         - HuggingFace Transformers Library
         - Ollama running locally e.g. for confidential data that must not go to some cloud server
+- Limitations of Frontier Models:
+    - They are not great at specialized domains e.g. most are not at PhD level but are getting very close.
+    - They're not great at recent events because of the date limit on the data they're trained on.
+    - They confidently make mistakes i.e. giving wrong answers with blindspots.
