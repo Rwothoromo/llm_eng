@@ -47,9 +47,9 @@ A breakdown of key concepts and developments in the world of Large Language Mode
 
 ### Core AI Use Cases
 
-* **Summarization** is one of the most common and practical applications of AI.
-* **Perplexity** is an AI-powered search engine, demonstrating how AI is enhancing information retrieval.
-* **OpenAI** stands out as a developer of frontier models, pushing the boundaries of AI capabilities.
+- **Summarization** is one of the most common and practical applications of AI.
+- **Perplexity** is an AI-powered search engine, demonstrating how AI is enhancing information retrieval.
+- **OpenAI** stands out as a developer of frontier models, pushing the boundaries of AI capabilities.
 
 ---
 
@@ -58,25 +58,25 @@ A breakdown of key concepts and developments in the world of Large Language Mode
 Effective LLM development and deployment revolve around three main pillars:
 
 1.  **Models:**
-    * **Open Source:** Accessible and customizable models like **Llama, Mixtral, Qwen, Gemma,** and **Phi**.
-    * **Closed Source:** Proprietary models such as **GPT, Claude, Gemini, Command R+,** and paid versions of **Perplexity**.
-    * **Multi-modal:** Models capable of processing and generating various types of data (e.g., text, images).
-    * **Architecture:** The underlying design of the model (e.g., Transformer).
-    * **Selection:** Choosing the right model for a specific task based on its strengths and limitations.
+    - **Open Source:** Accessible and customizable models like **Llama, Mixtral, Qwen, Gemma,** and **Phi**.
+    - **Closed Source:** Proprietary models such as **GPT, Claude, Gemini, Command R+,** and paid versions of **Perplexity**.
+    - **Multi-modal:** Models capable of processing and generating various types of data (e.g., text, images).
+    - **Architecture:** The underlying design of the model (e.g., Transformer).
+    - **Selection:** Choosing the right model for a specific task based on its strengths and limitations.
 
 2.  **Tools:**
-    * **Hugging Face:** A hub for pre-trained models and datasets.
-    * **LangChain:** A framework for developing applications powered by language models.
-    * **Gradio:** For building interactive web demos of machine learning models.
-    * **Weights & Biases:** For tracking and visualizing machine learning experiments.
-    * **Modal:** For deploying AI models at scale.
+    - **Hugging Face:** A hub for pre-trained models and datasets.
+    - **LangChain:** A framework for developing applications powered by language models.
+    - **Gradio:** For building interactive web demos of machine learning models.
+    - **Weights & Biases:** For tracking and visualizing machine learning experiments.
+    - **Modal:** For deploying AI models at scale.
 
 3.  **Techniques:**
-    * **APIs (Application Programming Interfaces):** For programmatic access to models.
-    * **Multi-shot Prompting:** Providing multiple examples in a prompt to guide the model's response.
-    * **RAG (Retrieval-Augmented Generation):** Combining information retrieval with text generation to improve accuracy and relevance.
-    * **Fine-tuning:** Adapting a pre-trained model to a specific task or dataset.
-    * **Agentization:** Giving LLMs the ability to plan and execute multi-step tasks.
+    - **APIs (Application Programming Interfaces):** For programmatic access to models.
+    - **Multi-shot Prompting:** Providing multiple examples in a prompt to guide the model's response.
+    - **RAG (Retrieval-Augmented Generation):** Combining information retrieval with text generation to improve accuracy and relevance.
+    - **Fine-tuning:** Adapting a pre-trained model to a specific task or dataset.
+    - **Agentization:** Giving LLMs the ability to plan and execute multi-step tasks.
 
 ---
 
@@ -88,13 +88,36 @@ There are three primary methods for utilizing LLMs:
     * Direct conversational interaction, exemplified by **ChatGPT**.
 
 2.  **Cloud APIs:**
-    * **LLM APIs:** Direct access to models, such as **OpenAI's API**.
-    * **Frameworks:** Libraries like **LangChain** that orchestrate multiple AI services.
-    * **Managed AI Cloud Services:** Platforms like **Amazon Bedrock, Google Vertex AI,** and **Azure ML** offering integrated LLM solutions.
+    - **LLM APIs:** Direct access to models, such as **OpenAI's API**.
+    - **Frameworks:** Libraries like **LangChain** that orchestrate multiple AI services.
+    - **Managed AI Cloud Services:** Platforms like **Amazon Bedrock, Google Vertex AI,** and **Azure ML** offering integrated LLM solutions.
 
 3.  **Direct Interfaces:**
-    * **Hugging Face Transformers Library:** For local development and fine-tuning.
-    * **Ollama:** Running models locally, ideal for sensitive or confidential data that shouldn't leave your environment.
+    - **Hugging Face Transformers Library:** For local development and fine-tuning.
+    - **Ollama:** Running models locally, ideal for sensitive or confidential data that shouldn't leave your environment.
+
+---
+
+### No. of Parameters in Models
+
+The "size" of an LLM is often measured by its number of parameters (or weights), which indicate the complexity and capacity of the model:
+
+- **GPT-1** (2018) launched with 117 Million parameters.
+- **Presently, Llama 3.1** (specifically the largest variant) has 405 Billion parameters.
+- **GPT-4** is estimated to have over 1 Trillion parameters (exact figure not publicly disclosed by OpenAI).
+
+---
+
+### Understanding Tokens
+
+When an LLM processes text, it first breaks it down into smaller units called tokens. You can explore this process yourself using the OpenAI Tokenizer.
+
+- One token generally maps to about **4 characters**.
+- Roughly, one token represents about **three-quarters** of a word.
+- As a rule of thumb, **1,000 tokens** typically equate to about **750 words**.
+- For example, the phrase "The great greek grape growers grow great greek grapes" is broken down into **9 tokens**.
+- **Note:** The token count tends to be higher for content containing **mathematical equations, scientific terms, and code**, as these often require more tokens to represent accurately.
+The **Context Window** refers to the maximum number of tokens an LLM can process within a single prompt. This determines how much information the model can "remember" and use to generate its next responses.
 
 ---
 
@@ -102,9 +125,9 @@ There are three primary methods for utilizing LLMs:
 
 Despite their advancements, current frontier models have some limitations:
 
-* **Specialized Domains:** They may not perform at a PhD level in highly niche fields, though they are rapidly improving.
-* **Knowledge Cut-off:** Their training data has a specific date limit, meaning they lack knowledge of very recent events.
-* **Confident Mistakes (Hallucinations):** They can sometimes generate incorrect information with high confidence due to inherent blind spots.
+- **Specialized Domains:** They may not perform at a PhD level in highly niche fields, though they are rapidly improving.
+- **Knowledge Cut-off:** Their training data has a specific date limit, meaning they lack knowledge of very recent events.
+- **Confident Mistakes (Hallucinations):** They can sometimes generate incorrect information with high confidence due to inherent blind spots.
 
 ---
 
@@ -112,10 +135,10 @@ Despite their advancements, current frontier models have some limitations:
 
 The LLM landscape is evolving rapidly:
 
-* **2017:** Google scientists introduced the groundbreaking **Transformer Architecture**, a foundational element for many modern LLMs.
-* **Evolution of Roles:** The "Prompt Engineer" role has seen a significant shift; prompting is now more intuitive and accessible. The pay and hiring hype dipped.
-* **Customization and Ecosystems:** The emergence of **Custom GPTs** and the **GPT Store** allows for personalized AI applications.
-* **Integrated AI Assistants:** The rise of **CoPilots** like **Microsoft Copilot** and **GitHub Copilot**, which integrate AI directly into workflows.
-* **Advanced Agentization:** Further development in AI agents, such as **GitHub Copilot Workspace**, where LLMs can be assigned complex tasks and even take on planning roles.
+- **2017:** Google scientists introduced the groundbreaking **Transformer Architecture**, a foundational element for many modern LLMs.
+- **Evolution of Roles:** The "Prompt Engineer" role has seen a significant shift; prompting is now more intuitive and accessible. The pay and hiring hype dipped.
+- **Customization and Ecosystems:** The emergence of **Custom GPTs** and the **GPT Store** allows for personalized AI applications.
+- **Integrated AI Assistants:** The rise of **CoPilots** like **Microsoft Copilot** and **GitHub Copilot**, which integrate AI directly into workflows.
+- **Advanced Agentization:** Further development in AI agents, such as **GitHub Copilot Workspace**, where LLMs can be assigned complex tasks and even take on planning roles.
 
 ---
