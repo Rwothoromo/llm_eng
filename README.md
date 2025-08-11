@@ -74,7 +74,7 @@ Effective LLM development and deployment are built on three main pillars: Models
 
 1.  **Models:** The foundation of any AI application.
     * **Open Source:** Accessible and customizable models like **Llama**, **Mixtral**, and **Gemma**.
-    * **Closed Source:** Proprietary models such as **GPT**, **Claude**, and **Gemini**.
+    * **Closed Source:** Proprietary models such as **GPT**, **[Claude](https://claude.ai)**, and **[Gemini](https://gemini.google.com)**. [Cohere](https://cohere.com/), [Meta AI](https://www.meta.ai/), [Perplexity](https://www.perplexity.ai)
     * **Multi-modal:** Models that can process and generate various data types, including text, images, and audio.
 
 2.  **Tools:** The software and frameworks used to build applications.
@@ -125,3 +125,19 @@ Even the most advanced LLMs have limitations you should be aware of:
 * **Knowledge Cut-off:** Their training data has a specific date limit, so they lack knowledge of very recent events.
 * **Confident Mistakes (Hallucinations):** They can sometimes generate incorrect information with high confidence.
 * **Specialized Domains:** They may not have a PhD-level understanding of highly niche or specialized fields.
+
+### RAG (Retrieval-Augmented Generation)
+
+RAG is a technique that improves a chatbot's response by retrieving relevant external information and adding it to the prompt. This helps the chatbot provide more accurate and context-aware answers.
+
+### Tools
+
+These are external functions or APIs that an LLM can use to perform specific tasks. Tools allow the LLM to go beyond simple text generation to do things like:
+
+- **Fetch Data**: Retrieve real-time information (e.g., weather, stock prices).
+- **Perform Actions**: Book a meeting or send an email.
+- **Calculations**: Handle complex math problems.
+
+### Agents
+
+Agents are autonomous software entities that can reason, plan, and execute tasks to achieve a goal. They use a variety of tools to solve complex problems with limited human oversight. Agents break down a problem into smaller steps and work through them until the goal is achieved.
