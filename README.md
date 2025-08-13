@@ -108,3 +108,31 @@ Even the most advanced LLMs have limitations:
 - **RAG (Retrieval-Augmented Generation):** A technique that improves a chatbot's response by retrieving relevant external information and adding it to the prompt.
 - **Tools:** External functions or APIs that an LLM can use to perform specific tasks, such as fetching data, performing actions, or handling calculations.
 - **Agents:** Autonomous software entities that can reason, plan, and execute tasks to achieve a goal. They use various tools to break down and solve complex problems with limited human oversight.
+
+### HuggingFace Platform
+- The Ubiquitous platform for LLM Engineers (https://huggingface.co/).
+- **Models:** Has over 1.9M Open Source models
+- **Datasets:** Has over 200k datasets
+- **Spaces:** Many apps on HuggingFace cloud/platform (most built with Gradio). Also StreamLit, Leaderboards.
+- **HuggingFace Libraries:**
+    - hub
+    - datasets
+    - transformers
+    - peft (parameter, efficient fine tuning)
+    - trl (transformer reinforcement learning)
+    - accelerate (allows tranformers to run on distributed set-ups)
+- There are two API levels of HuggingFace
+    - Pipelines (Higher level APIs to carry out standard tasks incredibly fast).
+        - **Sentiment analysis.** Checking for the emotion conveyed in agiven sentence.
+        - **Classifier/Classification.** Putting things into buckets.
+        - **Named Entity Recognition.** Take words in a sentence and tag them as things like people, locations, etc.
+        - **Question Answering.** You have some context and need to ask questions based on that.
+        - **Summarizing/Summarization.** You provide a block of text to be turned into a summary.
+        - **Translation.** Translate between one language and another.
+        - Use pipelines to generate Text, Images, and Audio.
+    - Tokenizers and Models (Lower level APIs to provide the most power and control).
+
+### Google Colaab
+- Run Jupyter Notebook on [Google Colab](https://colab.research.google.com/), to share and collaborate with colleagues.
+- Different runtimes availabe; CPU-based, Lower spec GPU, Higher spec GPU for resource-intensive stuff.
+
