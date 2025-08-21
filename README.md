@@ -136,3 +136,16 @@ Even the most advanced LLMs have limitations:
 - Run Jupyter Notebook on [Google Colab](https://colab.research.google.com/), to share and collaborate with colleagues.
 - Different runtimes availabe; CPU-based, Lower spec GPU, Higher spec GPU for resource-intensive stuff.
 
+### The Tokenizer
+- An object that translates/maps between text and tokens with encode() (strings to tokens) and decode() (tokens to strings) methods, for a particular model.
+- Contains a Vocab (all the different fragments of characters that make up a token, also a special token that tells the model something e.g. start of a sentence).
+- Has a Chat Template that can take a set of mesagges and makes them a set of tokens.
+
+#### Tokenizers for Key Models
+- Llama 3.1 (Meta).
+- Phi 3 (Microsoft).
+- Qwen2 (Alibaba Cloud).
+- Starcoder2 (Coding model). Built in collaboration by HuggingFace, ServiceNow and Nvidia.
+
+### Quantization
+- This allows us to load a model into memory and use less memory when running things.
