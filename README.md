@@ -149,3 +149,88 @@ Even the most advanced LLMs have limitations:
 
 ### Quantization
 - This allows us to load a model into memory and use less memory when running things.
+
+### Compare LLMs
+
+#### Basics
+- Open-source or closed.
+- Release date and knowledge cut-off (last date of training data / limit of knowledge on current events).
+- N. of Parameters (strength of model, costs and how much training data is needed to fine tune the model).
+- Training tokens (tokens used during training / size of training dataset).
+- Context length (size of context window / how many tokens are kept in memory when predictting the next token e.g. chat history)
+
+#### Other Basics
+- **Inference Costs:** The expense each time the model generates output in production.
+    - For frontier models, API costs depend on input and output token counts.
+    - For open source models run locally or on cloud platforms like Colab or Modal, runtime compute costs apply.
+- **Training Costs:** If you fine-tune an open source model, training costs must be factored in. Out-of-the-box frontier models typically have no training costs unless fine-tuned.
+- **Build Costs** and **Time to Market**: The **effort** and **duration** required to develop a solution. Frontier models often have low build costs and fast time to market, while fine-tuning open source models usually takes longer and is more complex.
+- **Rate Limits and Reliability:** Frontier models accessed via APIs may have rate limits and occasional stability issues, such as overload errors.
+- **Speed** and **Latency**: Throughput speed (how fast tokens are generated) and latency (time to first token response) are important, especially in interactive applications like chatbots or multimodal assistants.
+- **Licensing**: Be aware of license restrictions for both open and closed source models, including commercial use limitations and terms of service agreements.
+
+### The Chinchilla Scaling Law
+Thhe number of parameters is approimately/roughly proportional to the number/size of training tokens.
+
+### Benchmarks
+Tests applied and used to rank LLMs. See the name and what gets evaluated.
+- **ARC**: Scientific Reasoning (multi-choice questions)
+- **DROP**: Language Comparison
+- **HellaSwag**: Common Sense
+- **MMLU**: Understanding - Massive Multitask Language Understanding.
+- **TruthfulQA**: Accuracy
+- **Winogrande**: Context (does the LLM understand the context and resolve ambiguity?).
+- **GSM8K**: Math (Grade Scoring Math for elementary and middle school).
+- **ELO**: Chat (eval chat between models e.g. face-offs, zero-sum games, 1 loser and 1 winner).
+- **HumanEval**: Python Coding test (generate code based on DocStrings).
+- **MultiPL-E**: Broader Coding (Translate **HumanEval** to 18 languages).
+
+### Limitations of Benchmarks
+Benchmarks are useful for comparing where different models excel and where they do not intend to be used.
+- Benchmarks are **not consistently applied**. Depending on the source, especially if it is a company press release, the methodology, hardware used, and other factors can vary. There is no gold standard that standardizes these measurements, so all results should be taken with a pinch of salt.
+- Benchmarks can be **too narrow in scope**, particularly when involving multiple choice style questions. It is difficult to measure nuanced reasoning with such formats.
+- **Training data leakage** is a significant problem. It is challenging to ensure that answers are not present in the training data, especially as models are trained on increasingly recent data that may include information about these benchmarks.
+- **Overfitting** is a common issue from traditional data science. Models may perform exceptionally well on benchmarks because of extensive hyperparameter tuning and repeated testing, effectively solving the benchmark rather than the underlying task. This can lead to poor performance on out-of-sample questions that test the same skills but are phrased differently.
+- **New Speculative Problem:** Frontier LLMs may be aware that they're being evaluated.
+
+### Hard, Next-Level Benchmarks
+- **GPQA**: Google-proof Q&A (resistant to Google search findings) Graduate Tests (448 expert questions in Physics, Chemistry and Biology for PhD level. Regular non-PhDs score 34% even with web access). PhD people score 65% on average. Claude 3.5 sonnet is the best currently (59.4% score).
+- **BBHard**: Big-Bench Hard. 204 tasks that **used to be** beyond the LLMs' capabilities.
+- **Math Lv 5**: Hardest tear of Math questions for high school competitions
+- **IFEval**: Difficult instructions.
+- **MuSR**: Multistep Soft Reasoning. For logical deductions.
+- **MMLU PRO:** Harder **MMLU**. Massive Multitask Language Understanding - Professional has 10 multi-choice questions.
+
+## LLM Leaderboards
+- HuggingFace Open LLM leaderboad (https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard).
+- HuggingFace BigCode
+- HuggingFace LLM Perf
+- HuggingFace Others e.g. Medical, Human Language-specific
+- Vellum (has API costs and context windows comparisons)
+- SEAL (expert level)
+
+Check for different leaderboards to help you select the best open-source model for your usecase
+- HuggingFace has https://huggingface.co/spaces?search=leaderboard
+- Vellum has https://vellum.ai/llm-leaderboard
+- Scale has SEAL leaderboads https://scale.com/leaderboard
+- LMSYS Chatbot Arena https://lmarena.ai/leaderboard (Assess models by Humans)
+
+### Some AI usecases
+- harvey.ai for Law stuff
+- nebula.io for talent hiring
+- bloop.ai for porting legacy codebases into Java e.g. Old COBOL code.
+- Einstein Copilot for Health by Salesforce (https://www.salesforce.com/agentforce/einstein-copilot/)
+
+### Evaluate Performance of Gen AI solutions
+- Model-centric or Technical Metrics (Easiest to optimize with)
+    - Loss (how poorly an LLM has performed in its task) e.g. cross-entropy loss
+    - Perplexity (e to-the-power-of cross-entropy loss).
+    - Accuracy
+    - Precision, Recall, F1
+    - AUC-ROC
+- Business-centric or Outcome Metrics (Most tangible impact)
+    - KPIs tied to business objectives
+    - ROI
+    - Improvements in time, cost or resources
+    - Customer satisfaction
+    - Benchmark comparisons
