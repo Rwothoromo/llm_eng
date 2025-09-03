@@ -227,3 +227,63 @@ Even the most advanced LLMs have fundamental weaknesses:
 - LangChain provides wrappers around common LLM APIs, allowing easy switching between models like OpenAI and Claude.
 - Despite decreasing need due to maturing APIs, LangChain remains a valuable tool for loading, chunking, and vectorizing knowledge bases efficiently.
 - LangChain significantly simplifies creating applications for common tasks like assistance and retrieval-augmented generation (RAG).
+
+### Document structuring strategies for creating a knowledge base for RAG
+- Document/Text splitting with LangChain (https://python.langchain.com/docs/concepts/text_splitters/).
+- How partitioning a PDF works (https://docs.unstructured.io/api-reference/partition/partitioning).
+- How Chunking works (https://docs.unstructured.io/api-reference/partition/chunking).
+- Unstructured is an open-source tool for converting documents to structured data effortlessly (https://github.com/Unstructured-IO/unstructured).
+
+### Chroma
+A lovely datastore for keeping vectors. We can visualize the data thereafter.
+For example:
+```python
+# Use OpenAI Embeddings model for text representation.
+embeddings = OpenAIEmbeddings()
+
+# Create Chroma Vector Store
+vectorstore = Chroma.from_documents(
+  documents=chunks, # populate the vectorstore with chunks (likely text segments)
+  embedding-embeddings, # the embeddings model
+  persist_directory=db_name # Persist the Vector Store to a local directory for later use
+)
+```
+
+### Key Abstractions in LangChain
+LangChain defines several abstractions that simplify building applications:
+- **LLM:** Represents a language model, such as OpenAI's GPT. This abstraction encapsulates the model interface.
+- **Retriever:** An interface to a vector store, such as Chroma, used for retrieval in RAG workflows. It enriches prompts by retrieving relevant documents.
+- **Memory:** Represents the history of a conversation with a chatbot. It abstracts the underlying data structure, typically a list of messages, managing context across interactions.
+
+For example:
+```python
+# create a new Chat with OpenAI with a temperature setting of 0.7, influencing the creativity of the responses
+llm = ChatOpenAI (temperature=0.7)
+
+# set up the conversation memory for the chat - configured to store chat history, allowing the AI to maintain context throughout the conversation
+memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+
+# create a retriever from the Chroma datastore, enabling the retrieval of relevant information for generating responses
+retriever = vectorstore.as_retriever()
+
+# putting it together - The LLM, retriever, and memory are combined to form a ConversationalRetrievalChain, which facilitates interactive conversations with the AI, leveraging both its language generation capabilities and retrieved information.
+conversation_chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=retriever, memory=memory)
+```
+
+For migrating DB, see https://python.langchain.com/docs/versions/migrating_memory/
+
+### LangChain Expresiol Langiuage (LCEL)
+- LCEL is a declarative language (using YML) that can be used as an alternative to the code approach.
+- LCEL allows declarative setup of chains using YAML files.
+- LCEL closely maps to Python code for defining models, memory, embeddings, vector stores, retrievers, and chains.
+
+### WEEK 5 CHALLENGES (Consider doing when you get time)
+- Major challenge for you - your own private Knowledge Worker
+- Create a Knowledge Worker on your information to boost productivity
+- Assemble all your files in 1 place; your personal Knowledge Base
+- Vectorize everything in Chroma - your vector datastore
+- Build a Conversational Al and ask questions!
+- Advanced ideas to take it to the next level
+- If you use Google Workspace, use Google's API to read your own docs
+- If you use MS Office, use libraries to read Office docs
+- Harder - use libraries to connect to your email inbox, and Slack, and more!
