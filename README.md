@@ -287,3 +287,49 @@ For migrating DB, see https://python.langchain.com/docs/versions/migrating_memor
 - If you use Google Workspace, use Google's API to read your own docs
 - If you use MS Office, use libraries to read Office docs
 - Harder - use libraries to connect to your email inbox, and Slack, and more!
+
+### Training (Transfer Learning)
+- Take a pre-trained multi-billion prameter model, and use aditional training data to fine-tune it to do our task.
+- Training such a model from scratch would otherwise be expensive (10s to 100s of millions of dollars $).
+
+### Sources of Datasets:
+- Personal or Company Proprietary Data
+- Kaggle
+- HuggingFace
+- Synthetic data (faked or LLM-generated data)
+- Specialist Companies that curate or craft data for you e.g. scale.com
+
+### Digging into data
+1. Investigate - understand the data, its quality et al
+2. Parse - into a structure easier to handle
+3. Visualize - see how spread out the values are
+4. Assess data quality - understand the limitations
+5. Curate - decide how to craft the dataset e.g. exclude the poor quality dataset
+6. Save - upload to the HuggingFace Hub
+
+### Five-Step Strategy for Applying Models to Commercial Problems
+A five-step strategy guides the deployment of LLM solutions from business problem to production.
+1. **Step 1 - Understanding:** Gather business requirements and evaluate how success will be measured.
+- Data science metrics and how users and business sponsors will judge the project's achievement.
+- Understand the ultimate business metrics, even if you do not have immediate influence over them.
+- Analyze the data: quantity, quality, and format (structured, unstructured, or mixed). This understanding will influence your model choice and approach.
+- Determine non-functional requirements such as budget, scalability, latency (response time requirements), and time to market. For example, if a rapid build is required, using a frontier model via API and a user interface like Gradio can enable deployment within minutes.
+2. **Step 2 - Preparation:**
+- Research existing solutions that address the problem today, including non-data science approaches such as rule-based systems.
+- Explore traditional data science models, for example, linear regression for price prediction.
+- Establish baselines even if you are confident that an LLM will outperform existing solutions. This baseline provides a starting point and quantifies improvements from new models.
+- Compare relevant LLMs considering price, context length, licensing constraints, and benchmark performance using leaderboards and specialist scores.
+- Curate your data by scrubbing and pre-processing it. Split your data into training, validation, and test sets. Use validation data to tune hyperparameters and test data to evaluate final model success.
+3. **Step 3 - Selecting:**
+- Choose LLMs based on the criteria established during preparation. Experiment with different models, train and validate them using your curated data. This phase is forthcoming and will be exciting to undertake.
+4. **Step 4 - Optimizing Models to Solve Commercial Problems:**
+- Going beyond the pre-trained or existing frontier models to extract more value from them.
+- There are three main approaches to optimization: `prompting`, `retrieval-augmented generation (RAG)`, and `fine-tuning` (training the model further to improve its performance).
+  - Prompting and RAG are inference-time techniques, meaning they work with a trained model during inference to enhance results.
+  - Fine-tuning, however, is a training-time technique where the model's weights are adjusted with additional data to improve its problem-solving capabilities.
+5. **Step 4 - Productionizing AI Models:**
+- Involves defining APIs, hosting, deployment, monitoring, security, scaling, and continuous improvement.
+- Define an API that can be used to call our model or code. This API might either use an open-source model or make a call to a frontier model with various scaffolding around it, such as retrieval-augmented generation (RAG) or prompt engineering.
+- Decide how to host and deploy our model and API.
+  - We address considerations such as monitoring, information security concerns, and how the system will scale.
+  - We then measure the business metrics identified in step one and continuously retrain, measure performance, and improve our model on an ongoing basis.
